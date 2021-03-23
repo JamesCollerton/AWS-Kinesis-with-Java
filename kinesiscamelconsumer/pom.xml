@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>kinesiscamel</artifactId>
+	<artifactId>kinesiscamelconsumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kinesiscamel</name>
-	<description>Demo project for using AWS Kinesis with Camel in Spring</description>
+	<name>kinesiscamelproducer</name>
+	<description>Demo project for using AWS Kinesis with Camel in Spring, consumer</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
