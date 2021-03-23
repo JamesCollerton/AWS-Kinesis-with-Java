@@ -1,11 +1,14 @@
 package com.example.kinesiscamel.initialization;
 
 import com.example.kinesiscamel.model.TwitterApiSearchResult;
+import com.example.kinesiscamel.model.TwitterApiSearchRule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -18,8 +21,10 @@ public class TwitterInitialization implements ApplicationListener<ContextRefresh
   @Value("${twitter-api.search-url}")
   private String twitterApiSearchUrl;
 
-  @Value("${twitter-api.recent-path}")
-  private String twitterApiRecentPath;
+  @Value("${twitter-api.rule-path}")
+  private String twitterApiRulePath;
+
+  private static final String queryString = "to:BBC";
 
   @Autowired private RestTemplate restTemplate;
 
@@ -29,15 +34,26 @@ public class TwitterInitialization implements ApplicationListener<ContextRefresh
 
     String uriString =
         UriComponentsBuilder.fromHttpUrl(
-                String.format("%s%s", twitterApiSearchUrl, twitterApiRecentPath))
-            .queryParam("query", "to:bbc")
+                String.format("%s%s", twitterApiSearchUrl, twitterApiRulePath))
             .toUriString();
 
     log.info("Composed URI {}", uriString);
 
-    ResponseEntity<TwitterApiSearchResult> twitterApiSearchResultResponseEntity =
-        restTemplate.getForEntity(uriString, TwitterApiSearchResult.class);
+    ResponseEntity<TwitterApiSearchResult<TwitterApiSearchRule>>
+        twitterApiSearchResultResponseEntity =
+            restTemplate.exchange(
+                uriString, HttpMethod.GET, null, new ParameterizedTypeReference<>() {});
 
-    log.info("{}", twitterApiSearchResultResponseEntity.getBody());
+    TwitterApiSearchResult<TwitterApiSearchRule> rules =
+        twitterApiSearchResultResponseEntity.getBody();
+
+    log.info("Retrieved list of rules {}", rules);
+
+    if (rules.getData().stream()
+        .map(TwitterApiSearchRule::getValue)
+        .noneMatch(queryString::equals)) {
+
+      log.info("Rule missing {}, adding rule.", queryString);
+    }
   }
 }

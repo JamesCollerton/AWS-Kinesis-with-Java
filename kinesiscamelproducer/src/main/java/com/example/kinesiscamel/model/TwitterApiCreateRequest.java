@@ -7,6 +7,6 @@ import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TwitterApiSearchResult<SearchResultItem> {
-  private List<SearchResultItem> data;
+public class TwitterApiCreateRequest {
+  private List<TwitterApiCreateRule> add;
 }
