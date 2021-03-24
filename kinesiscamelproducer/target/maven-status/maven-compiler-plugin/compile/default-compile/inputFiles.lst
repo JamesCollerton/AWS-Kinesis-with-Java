@@ -1,0 +1,9 @@
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/model/TwitterApiCreateRequest.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/model/TwitterApiSearchResult.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/model/TwitterApiSearchRule.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/config/TwitterConfig.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/initialization/TwitterInitialization.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/model/TwitterApiCreateRule.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/KinesiscamelApplication.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/model/TwitterApiSearchTweet.java
+/Users/JamesCollerton/Documents/Programming/Git_Folders/AWS-Kinesis-with-Camel/kinesiscamelproducer/src/main/java/com/example/kinesiscamel/routes/TwitterRoute.java

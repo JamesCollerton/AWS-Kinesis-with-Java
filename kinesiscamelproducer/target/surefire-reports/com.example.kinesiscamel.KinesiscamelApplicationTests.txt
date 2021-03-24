@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.example.kinesiscamel.KinesiscamelApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.672 s <<< FAILURE! - in com.example.kinesiscamel.KinesiscamelApplicationTests
+contextLoads  Time elapsed: 0.04 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalArgumentException: Cannot instantiate interface org.springframework.context.ApplicationListener : org.springframework.boot.autoconfigure.BackgroundPreinitializer
+Caused by: java.lang.NoClassDefFoundError: org/springframework/core/NativeDetector
+Caused by: java.lang.ClassNotFoundException: org.springframework.core.NativeDetector
+
