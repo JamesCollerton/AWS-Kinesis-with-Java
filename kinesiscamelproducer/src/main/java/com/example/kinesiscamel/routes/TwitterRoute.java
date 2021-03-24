@@ -15,7 +15,7 @@ public class TwitterRoute extends RouteBuilder {
   @Override
   public void configure() {
 
-    from("timer://test?period=2000")
+    from("timer://test?period=20000")
         .description("Streaming tweets from API")
         .log("About to start our initial stream")
         .setHeader(Exchange.HTTP_METHOD)
