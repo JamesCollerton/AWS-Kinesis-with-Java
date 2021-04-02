@@ -38,7 +38,7 @@ public class KinesisService {
                 twitterResponseItem -> {
                   byte[] bytes;
                   try {
-                    bytes = objectMapper.writeValueAsBytes(this);
+                    bytes = objectMapper.writeValueAsBytes(twitterResponseItem);
                   } catch (IOException e) {
                     throw new RuntimeException("Couldn't write JSON as bytes");
                   }

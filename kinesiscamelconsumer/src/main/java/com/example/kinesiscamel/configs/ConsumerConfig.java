@@ -12,8 +12,8 @@ import java.util.function.Consumer;
 public class ConsumerConfig {
 
     @Bean
-    public Consumer<String> twitterResponseItemConsumer() {
-        return twitterResponseItem -> log.info("Received {}", twitterResponseItem);
+    public Consumer<TwitterResponseItem> twitterResponseItemConsumer() {
+        return twitterResponseItem -> log.info(twitterResponseItem.toString());
     }
 
 }
