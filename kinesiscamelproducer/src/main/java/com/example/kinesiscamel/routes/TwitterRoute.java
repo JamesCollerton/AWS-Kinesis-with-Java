@@ -1,6 +1,7 @@
 package com.example.kinesiscamel.routes;
 
 import com.example.kinesiscamel.processors.KinesisProcessor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,19 +9,19 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
+@Slf4j
 @Component
 public class TwitterRoute extends RouteBuilder {
 
   @Value("${twitter-api.bearer-token}")
   private String bearerToken;
 
-  @Autowired
-  private KinesisProcessor kinesisProcessor;
+  @Autowired private KinesisProcessor kinesisProcessor;
 
   @Override
   public void configure() {
+
+    log.info("Configuring Camel route");
 
     from("timer://test?period=20000")
         .description("Polling tweets from API")

@@ -42,6 +42,11 @@
             <artifactId>camel-timer</artifactId>
             <version>${camel.version}</version>
         </dependency>
+        <dependency>
+            <groupId>software.amazon.kinesis</groupId>
+            <artifactId>amazon-kinesis-client</artifactId>
+            <version>2.2.9</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -60,7 +65,7 @@
             <dependency>
                 <groupId>software.amazon.awssdk</groupId>
                 <artifactId>bom</artifactId>
-                <version>2.16.33</version>
+                <version>2.16.29</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
